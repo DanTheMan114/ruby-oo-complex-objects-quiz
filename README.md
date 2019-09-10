@@ -1,113 +1,57 @@
-# Quiz: Class Variables and Methods
+# Quiz: Building Complex Class Objects in Ruby
 
-## Class Variables and Methods
+## Building Complex Class Objects in Ruby
 
-?: Classes are objects.
-(X) True ( ) False
+?: Which folder contains Ruby test files?
+() `app` () `config` () `lib` (X) `spec`
 
-?: What type of scope does a class variable have?
-( ) Local ( ) Global ( ) Instance (X) Class
-
-?: What is the syntax for a class variable?
-( )`@variable_name` (X)`@@variable_name` ( )`$variable_name` ( ) `VARIABLE_NAME`
-
-?: 
-
+?: To create a new class in Ruby, what syntax should be used?
+()
 ```ruby
-def self.class_method_name
-  # some code
-end
-```
-
-In this code sample, what does the keyword `self` refer to?
-(X) The entire class itself  ( ) An instance of the class ( ) Local scope ( ) Instance scope
-
-?: Private methods can only be called within the context of the defining class. The receiver of a private method is always `self`.
-(X) True ( ) False
-
-?: Private methods, including initialize, are usually written with the word "private" above them.
-( ) True (X) False
-
-?:
-
-```ruby
-class Book
-
-  attr_accessor :name
-
-  def initialize(name)
-    @name = name
-  end
-end
-```
-
-What syntax should be used to to create a class variables that stores new instances of `Book` as soon as they're created?
-( )
-```ruby
-class Book
-
-  @@all = []
-
-  attr_accessor :name
-
-  def initialize(name)
-    @name = name
-  end
-end
-```
-( )
-```ruby
-class Book
-  attr_accessor :name
-
-  def initialize(name)
-    @name = name
-    @@all << self
-  end
+Class song
 end
 ```
 (X)
 ```ruby
-class Book
-
-  @@all = []
-
-  attr_accessor :name
-
-  def initialize(name)
-    @name = name
-    @@all << self
-  end
+class Song
 end
 ```
-( ) None of the Above
-
-?: What type of constant is defined within a class that are available to all instances of a particular class?
-( ) Instance ( ) Local ( ) Global (X) Class
-
-?: To create a class constant, what syntax should be used?
-( )`@variable_name` ( )`@@variable_name` ( )`$variable_name` (X) `VARIABLE_NAME`
-
-?: 
+()
 ```ruby
-class Book
-  attr_accessor :author, :page_count, :genre
-  attr_reader :title
-
-  GENRES = []
-
-  def initialize(title)
-    @title = title
-  end
-
-  def turn_page
-    puts "Flipping the page...wow, you read fast!"
-  end
-
+Class Song
+end
+```
+()
+```ruby
+class song
 end
 ```
 
-If a method requires some customization, what needs to change in the above code?
-( ) Create the writer for genre and add the logic for the class constant ( ) Add an `attr_reader` for genre ( ) Remove the `attr_accessor` for genre (X) All of the Above
+?: Which method gets triggered when we call `.new`?
+() `new` () `save` (X) `initialize` () All of the Above
+
+?: To create an instance variable, which syntax should be used?
+(X`@variable_name` ()`@@variable_name` ( )`$variable_name `( ) `VARIABLE_NAME`
+
+?: A _getter_ method that "gets" a property for us.
+(X) True () False
+
+?: A _setter_ method that "sets" a property for us.
+(X) True () False
+
+?: To set a getter and setter at the same time, which method(s) should be used?
+(X) `attr_accessor`
+() `attr_reader`
+() `attr_setter`
+() Both B and C
+
+?: According to OO design, classes in object oriented programming should have one job, one responsibility, and their services (i.e., methods) should be narrowly aligned with that responsibility. 
+(X) True () False
+
+?: In order to achieve the Single Responsibility Principle, what concepts should be utilized?
+() Abstraction () DRY (Don't Repeat Yourself) () Separation of Concerns (X) All of the Above
+
+?: One OO principle states that methods should not exceed 10 lines of code and classes should not exceed 50.
+() True (X) False
 
 ???
